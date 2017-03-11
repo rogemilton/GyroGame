@@ -55,7 +55,7 @@ public class GUY : MonoBehaviour
 		{
 			Vector3 stuffPosition = new Vector3 (Random.Range(-4,1),5,-3);
 			GameObject spawnedFood = Instantiate(rogers, stuffPosition,Quaternion.identity) as GameObject;
-			spawnedFood.rigidbody2D.gravityScale = 1.0f + (.005f * score);
+			spawnedFood.GetComponent<Rigidbody2D>().gravityScale = 1.0f + (.005f * score);
 			//Debug.Log(spawnedFood.rigidbody2D.gravityScale);
 		}
 
