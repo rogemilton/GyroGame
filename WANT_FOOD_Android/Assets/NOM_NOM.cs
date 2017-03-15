@@ -4,6 +4,7 @@ using System.Collections;
 public class NOM_NOM : MonoBehaviour {
 
 	public GameObject badFood;
+    public float rotator;
 
 	void OnCollisionEnter2D(Collision2D yum)
 	{
