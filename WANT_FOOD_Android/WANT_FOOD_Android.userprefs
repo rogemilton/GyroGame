@@ -1,8 +1,10 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUY.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\START.cs">
     <Files>
-      <File FileName="Assets\GUY.cs" Line="16" Column="27" />
+      <File FileName="Assets\GUY.cs" Line="18" Column="26" />
+      <File FileName="Assets\START.cs" Line="15" Column="112" />
+      <File FileName="Assets\GameOver.cs" Line="106" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
