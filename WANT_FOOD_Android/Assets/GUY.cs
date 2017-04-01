@@ -3,9 +3,8 @@ using System.Collections;
 
 public class GUY : MonoBehaviour 
 {
-    public int rogerSelector = 5;
     public GameObject[] rogers;
-	public GameObject roger;
+	private GameObject roger;
 	Random generator = new Random ();
 	public static int score = 0;
 	public Vector3 dir = Vector3.zero;
@@ -46,7 +45,7 @@ public class GUY : MonoBehaviour
 	{
 		if(frameCount % 75 == 0)
 		{
-            roger = rogers[Random.Range(0, 5)];
+            roger = rogers[Random.Range(0, 4)];
             Vector3 stuffPosition = new Vector3 (Random.Range(-4,1),5,-3);
 			GameObject spawnedFood = Instantiate(roger, stuffPosition,Quaternion.identity) as GameObject;
 			spawnedFood.GetComponent<Rigidbody2D>().gravityScale = 1.0f + (.005f * score);
