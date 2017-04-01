@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{DE4A45E0-635F-DCEE-03D8-3B4D60A37282}") = "WANT_FOOD_Android", "Assembly-CSharp.csproj", "{BCC5D0C5-95EB-6BA0-65A2-7D7F598CBD34}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WANT_FOOD_Android", "Assembly-CSharp.csproj", "{BCC5D0C5-95EB-6BA0-65A2-7D7F598CBD34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,5 +35,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal
