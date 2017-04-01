@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CreditsScript.cs" />
      <Compile Include="Assets\GUY.cs" />
      <Compile Include="Assets\GameOver.cs" />
      <Compile Include="Assets\NOM_NOM.cs" />
