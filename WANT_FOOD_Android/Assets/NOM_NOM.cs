@@ -3,8 +3,17 @@ using System.Collections;
 
 public class NOM_NOM : MonoBehaviour {
 
-	public GameObject badFood;
     public float rotator;
+
+    void Start()
+    {
+        rotator = Random.Range(-10.0f, 10.0f);
+    }
+
+    void Update()
+    {
+        transform.Rotate(Vector3.forward * rotator);
+    }
 
 	void OnCollisionEnter2D(Collision2D yum)
 	{
@@ -16,9 +25,7 @@ public class NOM_NOM : MonoBehaviour {
 		}
 		if (yum.gameObject.name == "floorcollider")
 		{
-			Instantiate(badFood, this.transform.position,Quaternion.identity);
 			Destroy(gameObject);
-
 			Application.LoadLevel (2);
 		}
 
