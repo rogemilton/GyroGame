@@ -45,7 +45,7 @@ public class GUY : MonoBehaviour
 	{
 		if(frameCount % 75 == 0)
 		{
-			currentFoodObject = foodObjects[Random.Range(0, 4)];
+			currentFoodObject = foodObjects[Random.Range(0, 9)];
             Vector3 stuffPosition = new Vector3 (Random.Range(-4,1),5,-3);
 			GameObject spawnedFood = Instantiate(currentFoodObject, stuffPosition,Quaternion.identity) as GameObject;
 			spawnedFood.GetComponent<Rigidbody2D>().gravityScale = 1.0f + (.005f * score);
