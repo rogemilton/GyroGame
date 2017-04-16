@@ -24,17 +24,17 @@ public class START : MonoBehaviour {
 
 	    if (GUI.Button(new Rect(Screen.width*.45f, Screen.height*.7f, Screen.width*.1f, Screen.height*.1f), buttonLeaderBoard, GUIStyle.none))
 	    {
-		    //Application.LoadLevel("credits");
+		    //Application.LoadLevel("leaderboard");
 	    }
 
         if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonHowTo, GUIStyle.none))
         {
-            //Application.LoadLevel("credits");
+            //Application.LoadLevel("howto");
         }
 
         if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonSettings, GUIStyle.none))
         {
-            //Application.LoadLevel("credits");
+            //Application.LoadLevel("settings");
         }
 
         if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonCredits, GUIStyle.none))
