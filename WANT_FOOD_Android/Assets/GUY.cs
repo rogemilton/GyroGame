@@ -12,12 +12,15 @@ public class GUY : MonoBehaviour
 	public GameObject grass;
 	public int frameCount = 0;
 
+    private Quaternion qTo;
+
 	void Start()
 	{
 		Screen.orientation = ScreenOrientation.Portrait;
-	}
-	
-	void Update () 
+        //qTo = Quaternion.identity;
+    }
+
+    void Update () 
 	{
 		frameCount++;
 
@@ -38,14 +41,15 @@ public class GUY : MonoBehaviour
 		dir.x = Input.acceleration.x * speed;
 
 		transform.Translate (dir.x, 0, 0);
+        //qTo = Quaternion.Euler(15.0f, 0.0f, 0.0f);
 
-	}
+    }
 
-	void FOOOD()
+    void FOOOD()
 	{
 		if(frameCount % 75 == 0)
 		{
-			currentFoodObject = foodObjects[Random.Range(0, 9)];
+			currentFoodObject = foodObjects[Random.Range(0, 14)];
             Vector3 stuffPosition = new Vector3 (Random.Range(-4,1),5,-3);
 			GameObject spawnedFood = Instantiate(currentFoodObject, stuffPosition,Quaternion.identity) as GameObject;
 			spawnedFood.GetComponent<Rigidbody2D>().gravityScale = 1.0f + (.005f * score);
