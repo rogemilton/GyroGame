@@ -7,11 +7,14 @@ public class START : MonoBehaviour {
     public Texture2D buttonSettings;
     public Texture2D buttonHowTo;
     public Texture2D buttonLeaderBoard;
+    public AudioClip pop;
+
+    private AudioSource source;
 
     void Start()
 	{
-
-	}
+        source = GetComponent<AudioSource>();
+    }
 
 	void OnGUI()
 	{
@@ -19,26 +22,31 @@ public class START : MonoBehaviour {
 
 	    if(GUI.Button(new Rect(Screen.width*.35f, Screen.height*.4f, Screen.width*.4f, Screen.height*.4f), buttonPlay, GUIStyle.none))
 	    {
-		    Application.LoadLevel(1);
+            source.PlayOneShot(pop);
+            Application.LoadLevel(1);
 	    }
 
 	    if (GUI.Button(new Rect(Screen.width*.45f, Screen.height*.7f, Screen.width*.1f, Screen.height*.1f), buttonLeaderBoard, GUIStyle.none))
 	    {
-		    //Application.LoadLevel("leaderboard");
-	    }
+            source.PlayOneShot(pop);
+            //Application.LoadLevel("leaderboard");
+        }
 
         if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonHowTo, GUIStyle.none))
         {
+            source.PlayOneShot(pop);
             //Application.LoadLevel("howto");
         }
 
         if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonSettings, GUIStyle.none))
         {
+            source.PlayOneShot(pop);
             //Application.LoadLevel("settings");
         }
 
         if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonCredits, GUIStyle.none))
         {
+            source.PlayOneShot(pop);
             Application.LoadLevel("credits");
         }
 
