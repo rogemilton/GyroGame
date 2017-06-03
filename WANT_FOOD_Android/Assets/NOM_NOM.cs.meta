@@ -1,8 +1,14 @@
 fileFormatVersion: 2
 guid: b416b8c69c4f3474d85c99a3db71daf8
+timeCreated: 1495673804
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - eat: {fileID: 8300000, guid: fa335c8a8991c044c991e5d7ecff10d3, type: 3}
+  - splat: {fileID: 8300000, guid: b631bf4c5c454204c948a301e2d4675d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

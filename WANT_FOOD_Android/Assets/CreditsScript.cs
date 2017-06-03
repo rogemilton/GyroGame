@@ -19,6 +19,5 @@ public class CreditsScript : MonoBehaviour {
             source.PlayOneShot(pop);
             Application.LoadLevel("starter");
         }
-
     }
 }

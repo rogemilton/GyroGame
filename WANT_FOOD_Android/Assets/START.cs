@@ -18,36 +18,34 @@ public class START : MonoBehaviour {
 
 	void OnGUI()
 	{
-	    GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 70;
-
-	    if(GUI.Button(new Rect(Screen.width*.35f, Screen.height*.4f, Screen.width*.4f, Screen.height*.4f), buttonPlay, GUIStyle.none))
+	    if(GUI.Button(new Rect(Screen.width*.35f, Screen.height*.4f, Screen.width*.4f, Screen.height*.1f), buttonPlay, GUIStyle.none))
 	    {
             source.PlayOneShot(pop);
             Application.LoadLevel(1);
 	    }
 
-	    if (GUI.Button(new Rect(Screen.width*.45f, Screen.height*.7f, Screen.width*.1f, Screen.height*.1f), buttonLeaderBoard, GUIStyle.none))
+	    if (GUI.Button(new Rect(Screen.width*.45f, Screen.height*.75f, Screen.width*.1f, Screen.height*.1f), buttonLeaderBoard, GUIStyle.none))
 	    {
             source.PlayOneShot(pop);
-            //Application.LoadLevel("leaderboard");
+            Application.LoadLevel(4);
         }
 
-        if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonHowTo, GUIStyle.none))
+        if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonHowTo, GUIStyle.none))
         {
             source.PlayOneShot(pop);
-            //Application.LoadLevel("howto");
+            Application.LoadLevel(5);
         }
 
-        if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonSettings, GUIStyle.none))
+        if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonSettings, GUIStyle.none))
         {
             source.PlayOneShot(pop);
-            //Application.LoadLevel("settings");
+            Application.LoadLevel(6);
         }
 
-        if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .85f, Screen.width * .1f, Screen.height * .1f), buttonCredits, GUIStyle.none))
+        if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonCredits, GUIStyle.none))
         {
             source.PlayOneShot(pop);
-            Application.LoadLevel("credits");
+            Application.LoadLevel(3);
         }
 
     }

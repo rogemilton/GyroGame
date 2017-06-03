@@ -11,8 +11,6 @@ public class loadScores : MonoBehaviour {
 	public static string outputURL = "http://dreamlo.com/lb/pkuI15_XZ0CnBlMKJ0YyuwE4_Q_Y_iAEuKyfKCwcolwg/quotes";
 	public static bool submitted = false;
 
-
-
 	IEnumerator Start()
 	{
 		//Debug.Log ("THIS WwwwwwwwORKS! " + outputURL);

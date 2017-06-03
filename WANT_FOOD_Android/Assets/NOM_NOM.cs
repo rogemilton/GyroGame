@@ -4,10 +4,15 @@ using System.Collections;
 public class NOM_NOM : MonoBehaviour {
 
     public float rotator;
+    public AudioClip eat;
+    public AudioClip splat;
+
+    private AudioSource source;
 
     void Start()
     {
         rotator = Random.Range(-10.0f, 10.0f);
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -21,12 +26,18 @@ public class NOM_NOM : MonoBehaviour {
 		if(yum.gameObject.name == "person" )
 		{
 			GUY.score += 10;
-			Destroy (gameObject);
+            source.enabled = true;
+            source.clip = eat;
+            source.Play();
+            Destroy (gameObject);
 		}
 		if (yum.gameObject.name == "floorcollider")
 		{
-			Destroy(gameObject);
-			Application.LoadLevel (2);
+            source.enabled = true;
+            source.clip = splat;
+            source.Play();
+            Destroy(gameObject);
+            Application.LoadLevel(2);
 		}
 
 	}

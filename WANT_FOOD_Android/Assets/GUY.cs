@@ -27,7 +27,6 @@ public class GUY : MonoBehaviour
 		AnimateGrass ();
 		TiltPhone ();
 		FOOOD ();
-
 	}
 
 	void OnGUI()
@@ -70,6 +69,4 @@ public class GUY : MonoBehaviour
 			grass.transform.Translate(-0.0075f,0,0); 
 		}
 	}
-
-
 }
