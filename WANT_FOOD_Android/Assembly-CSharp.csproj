@@ -49,8 +49,12 @@
      <Compile Include="Assets\CreditsScript.cs" />
      <Compile Include="Assets\GUY.cs" />
      <Compile Include="Assets\GameOver.cs" />
+     <Compile Include="Assets\HowToScript.cs" />
+     <Compile Include="Assets\HowToSlider.cs" />
+     <Compile Include="Assets\LeaderBoardScript.cs" />
      <Compile Include="Assets\NOM_NOM.cs" />
      <Compile Include="Assets\START.cs" />
+     <Compile Include="Assets\SettingScript.cs" />
      <Compile Include="Assets\loadScores.cs" />
      <Compile Include="Assets\testScript.cs" />
  <Reference Include="UnityEngine.UI">
