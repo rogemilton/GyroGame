@@ -6,6 +6,12 @@ using System.Collections.Generic;
 public class GameOver : MonoBehaviour
 {
     private int scoreThreshold = -1;
+    public Font myFont;
+    public Texture2D buttonSubmit;
+    public Texture2D buttonMenu;
+    public Texture2D buttonLeaderboard;
+    public Texture2D buttonReset;
+    public Texture2D buttonBack;
 
     private bool showLeaderBoard = false;
 
@@ -16,7 +22,7 @@ public class GameOver : MonoBehaviour
 
     private string loseGame = "";
 
-    private string name = "enter your name here :)";
+    private string name = "enter your name here";
 
     private WWW website;
 
@@ -32,8 +38,6 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        //GUY.score = 10; //this is only for testing
-
         website = new WWW(getScoresURL);
 
         while (!website.isDone)
@@ -45,37 +49,40 @@ public class GameOver : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 40;
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 20;
+        GUI.skin.font = myFont;
 
         if (!showLeaderBoard)
         {
-            GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Game Over! Final score is: " + GUY.score);
-
-            name = GUI.TextField(new Rect(Screen.width * .1f, Screen.height * .2f, Screen.width * .8f, Screen.height * .2f), name, 250);
-
-            if (GUI.Button(new Rect(Screen.width * .1f, Screen.height * .4f, Screen.width * .4f, Screen.height * .2f), "Leaderboard"))
-            {
-                showLeaderBoard = true;
-            }
-
-            if (GUI.Button(new Rect(Screen.width * .5f, Screen.height * .4f, Screen.width * .4f, Screen.height * .2f), "Submit Score"))
+            GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Game Over! Final score is:\n" + GUY.score);
+            name = GUI.TextField(new Rect(Screen.width * .1f, Screen.height * .2f, Screen.width * .8f, Screen.height * .1f), name, 250);
+            
+            if (GUI.Button(new Rect(Screen.width * .3f, Screen.height * .32f, Screen.width * .4f, Screen.height * .2f), buttonSubmit, GUIStyle.none))
             {
 
                 if (GUY.score > scoreThreshold)
                 {
                     AddScore(name, GUY.score);
-
-                    //AddScore(name, GUY.score);
-                }
-                else
-                {
-                    //Debug.Log("no");
                 }
                 showLeaderBoard = true;
             }
 
-            if (GUI.Button(new Rect(Screen.width * .1f, Screen.height * .6f, Screen.width * .8f, Screen.height * .3f), "R E S T A R T"))
+            if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonMenu, GUIStyle.none))
             {
+                //source.PlayOneShot(pop);
+                GUY.score = 0;
+                Application.LoadLevel(0);
+            }
+
+            if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonLeaderboard, GUIStyle.none))
+            {
+                //source.PlayOneShot(pop);
+                showLeaderBoard = true;
+            }
+
+            if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonReset, GUIStyle.none))
+            {
+                //source.PlayOneShot(pop);
                 GUY.score = 0;
                 Application.LoadLevel(1);
             }
@@ -86,13 +93,22 @@ public class GameOver : MonoBehaviour
             GUI.Box(new Rect(Screen.width * .1f, Screen.height * .2f, Screen.width * .8f, Screen.height * .6f), "High Scores\n" + GetHighScores());
             GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 30;
 
-            if (GUI.Button(new Rect(Screen.width * .1f, Screen.height * .8f, Screen.width * .4f, Screen.height * .2f), "MENU"))
+            if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonMenu, GUIStyle.none))
             {
+                //source.PlayOneShot(pop);
                 GUY.score = 0;
                 Application.LoadLevel(0);
             }
-            if (GUI.Button(new Rect(Screen.width * .5f, Screen.height * .8f, Screen.width * .4f, Screen.height * .2f), "RESTART"))
+
+            if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonBack, GUIStyle.none))
             {
+                //source.PlayOneShot(pop);
+                showLeaderBoard = false;
+            }
+
+            if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonReset, GUIStyle.none))
+            {
+                //source.PlayOneShot(pop);
                 GUY.score = 0;
                 Application.LoadLevel(1);
             }
@@ -124,14 +140,14 @@ public class GameOver : MonoBehaviour
     string GetHighScores()
     {
         List<string[]> listScores = new List<string[]>();
-        string leaderBoard = "\nscore data \nnot available :(\ncheck internet\nconnection";
+        string leaderBoard = "";
         
         if (isConnected())
         {
             allScores = tmpLeaderBoard;
             string[] stuff = allScores.Split('\n');
             
-            for (int i = 0; i < 5; ++i)
+            for (int i = 0; i < 10; ++i)
             {
                 string[] currentScore = stuff[i].Split('"');
 
