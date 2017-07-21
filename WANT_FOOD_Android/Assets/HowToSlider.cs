@@ -11,7 +11,7 @@ public class HowToSlider : MonoBehaviour
 	void Start()
 	{
 		Screen.orientation = ScreenOrientation.Portrait;
-        //qTo = Quaternion.identity;
+        qTo = Quaternion.identity;
     }
 
     void Update () 
@@ -24,7 +24,7 @@ public class HowToSlider : MonoBehaviour
 		dir.x = Input.acceleration.x * speed;
 
 		transform.Translate (dir.x, 0, 0);
-        //qTo = Quaternion.Euler(15.0f, 0.0f, 0.0f);
+        qTo = Quaternion.Euler(15.0f, 0.0f, 0.0f);
 
     }
 }
