@@ -17,30 +17,51 @@ public class START : MonoBehaviour {
 
 	void OnGUI()
 	{
-	    if(GUI.Button(new Rect(Screen.width*.35f, Screen.height*.5f, Screen.width*.4f, Screen.height*.1f), buttonPlay, GUIStyle.none))
+        if (GUI.Button(new Rect(Screen.width*.35f, Screen.height*.5f, Screen.width*.4f, Screen.height*.1f), buttonPlay, GUIStyle.none))
 	    {
             source.PlayOneShot(pop);
-            Application.LoadLevel(1);
-	    }
+            Invoke("LoadPlay", 0.03f);
+        }
 
 	    if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonLeaderBoard, GUIStyle.none))
-	    {
+        {
             source.PlayOneShot(pop);
-            Application.LoadLevel(4);
+            Invoke("LoadLeaderBoard", 0.03f);
         }
 
         if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonHowTo, GUIStyle.none))
         {
             source.PlayOneShot(pop);
-            Application.LoadLevel(5);
+            Invoke("LoadHowTo", 0.03f);
         }
 
         if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonCredits, GUIStyle.none))
         {
             source.PlayOneShot(pop);
-            Application.LoadLevel(3);
+            Invoke("LoadCredits", 0.03f);
         }
 
+    }
+
+    //Dumb way to get the sound working
+    void LoadPlay()
+    {
+        Application.LoadLevel(1);
+    }
+
+    void LoadLeaderBoard()
+    {
+        Application.LoadLevel(4);
+    }
+
+    void LoadHowTo()
+    {
+        Application.LoadLevel(5);
+    }
+
+    void LoadCredits()
+    {
+        Application.LoadLevel(3);
     }
 
 }

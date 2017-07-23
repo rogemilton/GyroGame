@@ -36,10 +36,14 @@ public class GameOver : MonoBehaviour
     public static string scoresCol1;
     public static string scoresCol2;
 
+    public AudioClip pop;
+
+    private AudioSource source;
+
     void Start()
     {
         website = new WWW(getScoresURL);
-
+        source = GetComponent<AudioSource>();
         while (!website.isDone)
         {
             //Debug.Log (website.bytesDownloaded);
@@ -49,7 +53,7 @@ public class GameOver : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 20;
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 48;
         GUI.skin.font = myFont;
 
         if (!showLeaderBoard)
@@ -69,22 +73,22 @@ public class GameOver : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonMenu, GUIStyle.none))
             {
-                //source.PlayOneShot(pop);
+                source.PlayOneShot(pop);
                 GUY.score = 0;
-                Application.LoadLevel(0);
+                Invoke("LoadStart", 0.03f);
             }
 
             if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonLeaderboard, GUIStyle.none))
             {
-                //source.PlayOneShot(pop);
+                source.PlayOneShot(pop);
                 showLeaderBoard = true;
             }
 
             if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonReset, GUIStyle.none))
             {
-                //source.PlayOneShot(pop);
+                source.PlayOneShot(pop);
                 GUY.score = 0;
-                Application.LoadLevel(1);
+                Invoke("LoadPlay", 0.03f);
             }
         }
         else
@@ -95,22 +99,22 @@ public class GameOver : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonMenu, GUIStyle.none))
             {
-                //source.PlayOneShot(pop);
+                source.PlayOneShot(pop);
                 GUY.score = 0;
-                Application.LoadLevel(0);
+                Invoke("LoadStart", 0.03f);
             }
 
             if (GUI.Button(new Rect(Screen.width * .45f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonBack, GUIStyle.none))
             {
-                //source.PlayOneShot(pop);
+                source.PlayOneShot(pop);
                 showLeaderBoard = false;
             }
 
             if (GUI.Button(new Rect(Screen.width * .75f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonReset, GUIStyle.none))
             {
-                //source.PlayOneShot(pop);
+                source.PlayOneShot(pop);
                 GUY.score = 0;
-                Application.LoadLevel(1);
+                Invoke("LoadPlay", 0.03f);
             }
         }
     }
@@ -165,5 +169,15 @@ public class GameOver : MonoBehaviour
     bool isConnected()
     {
         return true;
+    }
+
+    void LoadStart()
+    {
+        Application.LoadLevel("starter");
+    }
+
+    void LoadPlay()
+    {
+        Application.LoadLevel(1);
     }
 }
