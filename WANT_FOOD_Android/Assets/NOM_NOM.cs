@@ -27,7 +27,7 @@ public class NOM_NOM : MonoBehaviour {
 			GUY.score += 10;
             GameObject newEatSfx = (GameObject)Instantiate(eat, yum.transform.position, yum.transform.rotation);
             Destroy(newEatSfx, 0.5f);
-            GameObject newChomp = (GameObject)Instantiate(chompPart, yum.transform.position, yum.transform.rotation);
+            GameObject newChomp = (GameObject)Instantiate(chompPart, this.transform.position, this.transform.rotation);
             Destroy(newChomp, 0.5f);
             Destroy(gameObject);
 		}
@@ -35,7 +35,7 @@ public class NOM_NOM : MonoBehaviour {
 		{
             GameObject newSplatSfx = (GameObject)Instantiate(splat, yum.transform.position, yum.transform.rotation);
             Destroy(newSplatSfx, 0.5f);
-            GameObject newSplat = (GameObject)Instantiate(splatPart, yum.transform.position, yum.transform.rotation);
+            GameObject newSplat = (GameObject)Instantiate(splatPart, this.transform.position, this.transform.rotation);
             Destroy(newSplat, 0.5f);
             Destroy(gameObject);
             Application.LoadLevel(2);

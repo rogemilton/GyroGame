@@ -6,12 +6,11 @@ public class HowToSlider : MonoBehaviour
 	public Vector3 dir = Vector3.zero;
 	public float speed = 0.05f;
 
-    private Quaternion qTo;
-
+    private int rotate = 0;
+    
 	void Start()
 	{
 		Screen.orientation = ScreenOrientation.Portrait;
-        qTo = Quaternion.identity;
     }
 
     void Update () 
@@ -22,9 +21,20 @@ public class HowToSlider : MonoBehaviour
 	void TiltPhone()
 	{
 		dir.x = Input.acceleration.x * speed;
+        transform.Translate (dir.x, 0f, 0f);
+        transform.position = new Vector3(transform.position.x, 0);
 
-		transform.Translate (dir.x, 0, 0);
-        qTo = Quaternion.Euler(15.0f, 0.0f, 0.0f);
-
+        if (dir.x != 0) {
+            if ((dir.x > 0) && (rotate < 6))
+            {
+                transform.Rotate(0f, 0f, -rotate);
+                rotate++;
+            }
+            else if ((dir.x < 0) && (rotate > -6))
+            {
+                transform.Rotate(0f, 0f, -rotate);
+                rotate--;
+            }
+        }
     }
 }

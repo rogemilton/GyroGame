@@ -93,10 +93,8 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 12;
+            GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 48;
             GUI.Box(new Rect(Screen.width * .1f, Screen.height * .2f, Screen.width * .8f, Screen.height * .6f), "High Scores\n" + GetHighScores());
-            GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 30;
-
             if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .90f, Screen.width * .1f, Screen.height * .1f), buttonMenu, GUIStyle.none))
             {
                 source.PlayOneShot(pop);

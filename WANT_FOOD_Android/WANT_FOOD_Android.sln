@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WANT_FOOD_Android", "WANT_FOOD_Android.csproj", "{92F4F9E7-8FD1-9725-E819-CF7A7CCDBBD7}"
 EndProject
 Global

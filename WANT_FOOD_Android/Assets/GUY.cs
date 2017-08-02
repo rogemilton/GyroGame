@@ -12,12 +12,9 @@ public class GUY : MonoBehaviour
 	public GameObject grass;
 	public int frameCount = 0;
 
-    private Quaternion qTo;
-
 	void Start()
 	{
 		Screen.orientation = ScreenOrientation.Portrait;
-        //qTo = Quaternion.identity;
     }
 
     void Update () 
@@ -32,7 +29,8 @@ public class GUY : MonoBehaviour
 	void OnGUI()
 	{
 		string stats = score + "";
-		GUI.Box (new Rect (Screen.width * .7f, 0, Screen.width * .3f, Screen.height * .2f), stats);
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 48;
+        GUI.Box (new Rect (Screen.width * .7f, 0, Screen.width * .3f, Screen.height * .2f), stats);
 	}
 
 	void TiltPhone()
@@ -40,7 +38,6 @@ public class GUY : MonoBehaviour
 		dir.x = Input.acceleration.x * speed;
 
 		transform.Translate (dir.x, 0, 0);
-        //qTo = Quaternion.Euler(15.0f, 0.0f, 0.0f);
 
     }
 

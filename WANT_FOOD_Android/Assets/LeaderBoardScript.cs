@@ -42,7 +42,7 @@ public class LeaderBoardScript : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin.font = myFont;
-        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 16;
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 48;
         GUI.Box(new Rect(Screen.width * .1f, Screen.height * .2f, Screen.width * .8f, Screen.height * .6f), "High Scores\n" + GetHighScores());
         if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .8f, Screen.width * .4f, Screen.height * .4f), icon, GUIStyle.none))
         {
