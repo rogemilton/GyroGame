@@ -31,7 +31,7 @@ public class GUY : MonoBehaviour
 		string stats = score + "";
         GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = GUI.skin.textField.fontSize = 48;
         GUI.skin.label.normal.textColor = Color.black;
-        GUI.Label (new Rect (Screen.width * .7f, 5, Screen.width * .3f, Screen.height * .2f), stats);
+        GUI.Label (new Rect (Screen.width * .7f, 0, Screen.width * .3f, Screen.height * .2f), stats);
 	}
 
 	void TiltPhone()
