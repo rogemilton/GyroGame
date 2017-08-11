@@ -22,7 +22,7 @@ public class HowToSlider : MonoBehaviour
 	{
 		dir.x = Input.acceleration.x * speed;
         transform.Translate (dir.x, 0f, 0f);
-        transform.position = new Vector3(transform.position.x, 0);
+        transform.position = new Vector3(transform.position.x, 0, -3);
 
         if (dir.x != 0) {
             if ((dir.x > 0) && (rotate < 6))
